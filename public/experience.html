@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+        <style>
+            .wrapper{
+                background-image: url('./images/image2.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+            }
+
+            .content-wrapper{
+                text-align: center;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                height: 500px;
+                background-color: rgba(255, 255, 255, 0.6);
+                padding: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <a class="navbar-brand" href="/">My Profile</a>
+                <!-- Links -->
+                <ul class="navbar-nav text-right">
+                    <li class="nav-item">
+                    <a class="nav-link" href="/about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/skills">Skills</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="/experiences">Experiences</a>
+                    </li>
+                </ul>
+                </nav>
+            <div class="content-wrapper">
+                <h1>Experiences</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="experience_holder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+    let Experiences = {
+      1 : {
+        job: "Quality Assurance Engineer Intern",
+        company: "Total Integrated Solutions Pte. Ltd.", 
+        date : "April 2018 - June 2018"
+      },
+      2 : {
+        job: "Python Developer Intern",
+        company: "Trend Micro Inc.", 
+        date : "April 2019 - June 2019"
+      },
+      3 : {
+        job: "Web Developer Intern",
+        company: "LOPhils Inc.", 
+        date : "December 2019 - January 2020"
+      },
+      4 : {
+        job: "ReactJS Developer",
+        company: "Ballclub PH", 
+        date : "present-freelance"
+      },
+    }
+
+    let elementArray = "";
+
+    for (let key in Experiences){
+      let experiences = Experiences[key];
+      let element = "<div class='exp-holder'>"
+      element += "<br><strong>"+experiences.job+"</strong>";
+      element += "<br><span>"+experiences.company+"</span>";
+      element += "<br><span>"+experiences.date+"</span>";
+      element += "<div>";
+
+      elementArray += element;
+    }
+
+    $("#experience_holder").html($(elementArray));
+  </script>
+</html>

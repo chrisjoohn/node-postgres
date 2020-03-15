@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+        <style>
+            .wrapper{
+                background-image: url('./images/image2.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+            }
+
+            .content-wrapper{
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                height: 500px;
+                background-color: rgba(255, 255, 255, 0.7);
+                padding: 30px;
+                border-radius: 10px;
+            }
+            
+            #resume-pic{
+                border-radius: 50%;
+                height: 200px;
+                width: 200px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="navbar-brand" href="/">My Profile</a>
+            <!-- Links -->
+            <ul class="navbar-nav text-right">
+                <li class="nav-item active">
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/experiences">Experiences</a>
+                </li>
+            </ul>
+            </nav>
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src="./images/resume_pic.png" id="resume-pic"/>
+                        <br />
+                        <br />
+                        <center>
+                            <h5>Web Developer</h5>
+                        </center>
+                    </div>
+                    <div class="col-sm-8" id="about-wrapper">
+                        <br>
+                        <h2>Chris John B. Mulingbayan</h2>
+                        <h4>20 years old</h4>
+                        <span>5th year Computer Engineering student at Polytechnic University of the Philippines</span>
+
+                        <span>GitHub account : <a href="https://github.com/chrisjoohn">https://github.com/chrisjoohn</a></span>
+                        <br/>
+                        <br>
+                        <div id="contactContainer">
+                            <h3>Contact me</h3>
+                            <form action='/send-email' method='post'>
+                                <input class="form-control" type='email' name='email' placeholder='Email' />
+                                <input class="form-control" type='text' name="subject"  placeholder='Subject' />
+                                <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                                <center>
+                                    <button style="margin-top: 10px;" class="btn btn-success">
+                                        Email me!
+                                    </button>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+        <style>
+            .wrapper{
+                background-image: url('./images/image2.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+            }
+
+            .content-wrapper{
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                height: 500px;
+                padding: 40px;
+
+            }
+            
+            #resume-pic{
+                border-radius: 50%;
+            }
+
+            h1{
+                color: white;
+                font-size: 60px;
+            }
+
+            h3{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="navbar-brand" href="/">My Profile</a>
+            <!-- Links -->
+            <ul class="navbar-nav text-right">
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/experiences">Experiences</a>
+                </li>
+            </ul>
+            </nav>
+            <div class="content-wrapper">
+                    <h1>
+                        Hey There!
+                    </h1>
+                    <h1>
+                        I am Chris John Mulingbayan
+                    </h1>
+                    <h3>
+                        Web Developer
+                    </h3>
+
+                    <button class="btn btn-dark" onclick="location.href='/about'">Get Started</button>
+            </div>
+        </div>
+    </body>
+</html>
