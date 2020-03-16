@@ -2,10 +2,16 @@ const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
-dotenv.config()
+const db = require('./queries');
+const bodyParser = require('body-parser');
+
+
+dotenv.config();
 
 const app = express();
+app.use(cors());
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -15,8 +21,21 @@ const transporter = nodemailer.createTransport({
     }
 })
 
+app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded());
+app.use(express.urlencoded({
+  extended: true
+  })
+);
+
+
+app.get('/users', db.getUsers);
+app.get('/users/:id', db.getUserById);
+app.delete('/delete/:id', db.deleteUser);
+app.put('/update/:id', db.updateUser);
+app.post('/create', db.createUser);
+
 
 
 app.get('/', (req, res) => {
@@ -63,7 +82,9 @@ app.post('/send-email', (req, res) => {
 });
 
 
+const PORT = process.env.PORT;
 
-app.listen(process.env.PORT, () => {
-    console.log("Listening to port  3000...");
+
+app.listen(PORT, () => {
+    console.log(`Listening to port  ${PORT}...`);
 });
